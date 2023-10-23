@@ -159,7 +159,6 @@ SPECTACULAR_SETTINGS = {
 
 # AUTH_USER_MODEL = "usuario.Usuario"
 
-...
 if MODE == "PRODUCTION":
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
