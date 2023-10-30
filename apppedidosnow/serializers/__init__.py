@@ -3,3 +3,4 @@ from .bairro import BairroSerializer
 from .categoria import CategoriaSerializer
 from .motoboy import MotoboySerializer
 from .produto import ProdutoDetailSerializer, ProdutoListSerializer, ProdutoSerializer
+from .entrega import EntregaSerializer

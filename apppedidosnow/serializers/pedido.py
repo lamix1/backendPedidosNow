@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.serializers import CharField, ModelSerializer, SerializerMethodField
 
-from apppedidosnow.models import Pedido, ItensPedido, Produto
+from apppedidosnow.models import Pedido, ItensPedido, Produto, Entrega
 
 
 class ItensPedidoSerializer(ModelSerializer):
@@ -19,7 +19,8 @@ class ItensPedidoSerializer(ModelSerializer):
 class PedidoSerializer(ModelSerializer):
     status = CharField(source="get_status_display", read_only=True)
     itens = ItensPedidoSerializer(many=True, read_only=True)
-
+    entrega = EntregaSerializer(allow_null=True)
+    
     class Meta:
         model = Pedido
         fields = ("id", "cliente", "mesa", "status", "total", "itens")

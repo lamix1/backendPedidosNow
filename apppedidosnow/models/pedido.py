@@ -1,6 +1,6 @@
 from django.db import models
 
-from apppedidosnow.models import Produto
+from apppedidosnow.models import Produto, Entrega
 
 class Pedido(models.Model):
     class StatusPedido(models.IntegerChoices):
@@ -13,7 +13,10 @@ class Pedido(models.Model):
     status = models.IntegerField(choices=StatusPedido.choices,  default=StatusPedido.PRODUCAO)
     mesa = models.CharField(max_length=10)
     cliente = models.CharField(max_length=200)
-    
+
+    para_entrega = models.BooleanField(default=False)
+    entrega = models.OneToOneField(Entrega, on_delete=models.CASCADE, null=True, blank=True, related_name='pedido_entrega')
+
     @property
     def total(self):
         return sum(item.preco_item * item.quantidade for item in self.itens.all())
