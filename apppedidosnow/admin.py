@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Produto, Categoria, Pedido, ItensPedido
+from .models import Produto, Categoria, Pedido, ItensPedido, Bairro, Motoboy
 # admin.site.register(Pedido)
 
 @admin.register(Categoria)
@@ -28,3 +28,17 @@ class ItensPedidoInline(admin.TabularInline):
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
     inlines = [ItensPedidoInline]
+
+@admin.register(Bairro)
+class BairroAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    list_filter = ("nome",)
+    ordering = ("nome",)
+
+@admin.register(Motoboy)
+class MotoboyAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    list_filter = ("nome",)
+    ordering = ("nome",)

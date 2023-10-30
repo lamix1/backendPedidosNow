@@ -17,12 +17,16 @@ from apppedidosnow.views import (
     PedidoViewSet,
     CategoriaViewSet,
     ProdutoViewSet,
+    BairroViewSet,
+    MotoboyViewSet,
     )
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"produtos", ProdutoViewSet)
 router.register(r"pedidos", PedidoViewSet)
+router.register(r"bairros", BairroViewSet)
+router.register(r"motoboys", MotoboyViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
