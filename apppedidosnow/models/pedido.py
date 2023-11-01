@@ -1,13 +1,12 @@
 from django.db import models
 
-from apppedidosnow.models.produto import Produto
+from apppedidosnow.models import Produto
 
 class Pedido(models.Model):
     class StatusPedido(models.IntegerChoices):
-        PRODUCAO = (1,"Produção",)
+        PRODUCAO = (1,"PRODUCAO",)
         PRONTO = (2,"Pronto",)
-        AGUARDANDO = (3, "Aguardando pagamento",)
-        FECHADO = (4,"Fechado",)
+        FECHADO = (3, "Pago",)
         
     # usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, related_name="pedidos")
     status = models.IntegerField(choices=StatusPedido.choices,  default=StatusPedido.PRODUCAO)
