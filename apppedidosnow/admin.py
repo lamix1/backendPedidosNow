@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Produto, Categoria, Pedido, ItensPedido, Bairro, Motoboy
+from .models import Produto, Categoria, Pedido, ItensPedido, Bairro, Motoboy, Funcionario
 # admin.site.register(Pedido)
 
 @admin.register(Categoria)
@@ -38,6 +38,14 @@ class BairroAdmin(admin.ModelAdmin):
 
 @admin.register(Motoboy)
 class MotoboyAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    list_filter = ("nome",)
+    ordering = ("nome",)
+
+
+@admin.register(Funcionario)
+class FuncionarioAdmin(admin.ModelAdmin):
     list_display = ("nome",)
     search_fields = ("nome",)
     list_filter = ("nome",)
