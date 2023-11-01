@@ -20,6 +20,7 @@ from apppedidosnow.views import (
     BairroViewSet,
     MotoboyViewSet,
     FuncionarioViewSet,
+    UserViewSet
     )
 
 router = DefaultRouter()
@@ -29,6 +30,7 @@ router.register(r"pedidos", PedidoViewSet)
 router.register(r"bairros", BairroViewSet)
 router.register(r"motoboys", MotoboyViewSet)
 router.register(r"funcionarios", FuncionarioViewSet)
+router.register(r'usuarios', UserViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
