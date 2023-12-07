@@ -5,3 +5,4 @@ from .bairro import BairroViewSet
 from .motoboy import MotoboyViewSet
 from .funcionario import FuncionarioViewSet
 from .user import UserViewSet
+from .entregas import EntregaViewSet

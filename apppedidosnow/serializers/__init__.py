@@ -5,3 +5,4 @@ from .motoboy import MotoboySerializer
 from .produto import ProdutoDetailSerializer, ProdutoListSerializer, ProdutoSerializer
 from .funcionario import FuncionarioSerializer
 from .user import UserSerializer
+from .entregas import EntregaSerializer, CriarEditarItensEntregaSerializer, ItensEntregaSerializer, CriarEditarEntregaSerializer

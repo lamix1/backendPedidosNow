@@ -59,4 +59,4 @@ class CriarEditarPedidoSerializer(ModelSerializer):
             for item in itens:
                 ItensPedido.objects.create(pedido=instance, **item)
         instance.save()
-        return instance
+        return instance 
